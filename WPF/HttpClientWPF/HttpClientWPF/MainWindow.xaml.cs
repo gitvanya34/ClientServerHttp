@@ -33,7 +33,8 @@ namespace HttpClientWPF
         {
            await ClientHttp.Client.postMessage(textBoxName.Text, textBoxKey.Text, textBoxMessage.Text);
            Thread.Sleep(500);
-            textBoxLog.AppendText ("\n"+ClientHttp.Client.UserResponse);
+            textBoxLog.AppendText ("\n"+ClientHttp.Client.UserResponse + Environment.NewLine);
+            textBoxLog.ScrollToEnd();
         }
 
 
@@ -43,7 +44,8 @@ namespace HttpClientWPF
             Thread.Sleep(500);
             textBoxName.Text = ClientHttp.Client.UserName;
             textBoxKey.Text = ClientHttp.Client.UserKey;
-            textBoxLog.AppendText ( "\n"+ClientHttp.Client.UserResponse);
+            textBoxLog.AppendText ( "\n"+ClientHttp.Client.UserResponse + Environment.NewLine);
+            textBoxLog.ScrollToEnd();
         }
     }
 }

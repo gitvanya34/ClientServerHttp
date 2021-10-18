@@ -5,14 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HttpClientWPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="192" Width="403">
-    <Grid Margin="-106,6,0,8" RenderTransformOrigin="0.502,0.511">
-        <TextBox  Name="textBoxName" HorizontalAlignment="Left" Margin="121,56,0,0" Text="Name" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox Name="textBoxKey" HorizontalAlignment="Left" Margin="121,86,0,0" Text="Key" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        Title="MainWindow" Height="192" Width="428">
+    <Grid Margin="0,6,-15,8" RenderTransformOrigin="0.502,0.511" HorizontalAlignment="Right" Width="504">
+        <TextBox  Name="textBoxName" HorizontalAlignment="Left" Margin="88,56,0,0" Text="Name" TextWrapping="Wrap" VerticalAlignment="Top" Width="153"/>
+        <TextBox Name="textBoxKey" HorizontalAlignment="Left" Margin="88,86,0,0" Text="Key" TextWrapping="Wrap" VerticalAlignment="Top" Width="153"/>
         <TextBox  Name="textBoxLog" HorizontalAlignment="Left" Margin="260,56,0,0" Text="logClient" TextWrapping="Wrap" VerticalAlignment="Top" Width="215" Height="77"/>
         <Button Content="Connect" HorizontalAlignment="Left" Margin="260,10,0,0" VerticalAlignment="Top" Height="37" Width="94" Click="Button_Click"/>
         <Button Content="Send" HorizontalAlignment="Left" Margin="381,10,0,0" VerticalAlignment="Top" Height="37" Width="94" Click="ButtonSend_Click"/>
-        <TextBox Name="textBoxMessage" HorizontalAlignment="Left" Margin="121,115,0,0" Text="Message" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="textBoxMessage" HorizontalAlignment="Left" Margin="88,115,0,0" Text="Message" TextWrapping="Wrap" VerticalAlignment="Top" Width="153"/>
 
     </Grid>
 </Window>

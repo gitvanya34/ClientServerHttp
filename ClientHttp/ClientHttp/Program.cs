@@ -65,7 +65,6 @@ namespace ClientHttp
             try
             {
                
-               // string message = "hello word";
                 string[] cont = { name, key, message };
 
 
@@ -81,7 +80,6 @@ namespace ClientHttp
                 userResponse = DateTime.Now.ToString("HH:mm:ss") +": "+ result;
                 Console.WriteLine(result);
 
-                //record Person(string Name, string Occupation);
 
 
             }
