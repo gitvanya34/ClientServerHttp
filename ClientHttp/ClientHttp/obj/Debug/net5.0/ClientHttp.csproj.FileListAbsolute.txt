@@ -1,0 +1,16 @@
+D:\StudentData\Project\тестовое задание veeam\3\http2\ClientHttp\ClientHttp\bin\Debug\net5.0\ClientHttp.exe
+D:\StudentData\Project\тестовое задание veeam\3\http2\ClientHttp\ClientHttp\bin\Debug\net5.0\ClientHttp.deps.json
+D:\StudentData\Project\тестовое задание veeam\3\http2\ClientHttp\ClientHttp\bin\Debug\net5.0\ClientHttp.runtimeconfig.json
+D:\StudentData\Project\тестовое задание veeam\3\http2\ClientHttp\ClientHttp\bin\Debug\net5.0\ClientHttp.runtimeconfig.dev.json
+D:\StudentData\Project\тестовое задание veeam\3\http2\ClientHttp\ClientHttp\bin\Debug\net5.0\ClientHttp.dll
+D:\StudentData\Project\тестовое задание veeam\3\http2\ClientHttp\ClientHttp\bin\Debug\net5.0\ref\ClientHttp.dll
+D:\StudentData\Project\тестовое задание veeam\3\http2\ClientHttp\ClientHttp\bin\Debug\net5.0\ClientHttp.pdb
+D:\StudentData\Project\тестовое задание veeam\3\http2\ClientHttp\ClientHttp\obj\Debug\net5.0\ClientHttp.csprojAssemblyReference.cache
+D:\StudentData\Project\тестовое задание veeam\3\http2\ClientHttp\ClientHttp\obj\Debug\net5.0\ClientHttp.GeneratedMSBuildEditorConfig.editorconfig
+D:\StudentData\Project\тестовое задание veeam\3\http2\ClientHttp\ClientHttp\obj\Debug\net5.0\ClientHttp.AssemblyInfoInputs.cache
+D:\StudentData\Project\тестовое задание veeam\3\http2\ClientHttp\ClientHttp\obj\Debug\net5.0\ClientHttp.AssemblyInfo.cs
+D:\StudentData\Project\тестовое задание veeam\3\http2\ClientHttp\ClientHttp\obj\Debug\net5.0\ClientHttp.csproj.CoreCompileInputs.cache
+D:\StudentData\Project\тестовое задание veeam\3\http2\ClientHttp\ClientHttp\obj\Debug\net5.0\ClientHttp.dll
+D:\StudentData\Project\тестовое задание veeam\3\http2\ClientHttp\ClientHttp\obj\Debug\net5.0\ref\ClientHttp.dll
+D:\StudentData\Project\тестовое задание veeam\3\http2\ClientHttp\ClientHttp\obj\Debug\net5.0\ClientHttp.pdb
+D:\StudentData\Project\тестовое задание veeam\3\http2\ClientHttp\ClientHttp\obj\Debug\net5.0\ClientHttp.genruntimeconfig.cache
