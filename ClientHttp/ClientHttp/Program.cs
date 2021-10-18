@@ -27,12 +27,12 @@ namespace ClientHttp
 
         static async Task Main()
         {
-            //for (int i = 0; i < 50; i++)
-            //{
-            //   await  getKey(generateKey());
-            //   await postMessage(userName, userKey, "TestMessage");
-            //}
-            //Console.ReadKey();
+            for (int i = 0; i < 50; i++)
+            {
+                await getKey(generateKey());
+                await postMessage(userName, userKey, "TestMessage");
+            }
+            Console.ReadKey();
         }
         private static string generateKey()
         {

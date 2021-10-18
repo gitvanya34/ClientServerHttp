@@ -14,6 +14,8 @@ namespace ServerHttp
        
          static async Task Main(string[] args)
         {
+            File.AppendAllText("ServerLog.log",
+                   DateTime.Now.ToString()+ "Сервер запущен...Ожидание подключений..." + Environment.NewLine);
             Console.WriteLine("Сервер запущен...Ожидание подключений...");
             await Listen();
         }
@@ -64,8 +66,12 @@ namespace ServerHttp
             string responseString = "";
             if (ClientList.SearchNameAndKey(contentSplit[0], contentSplit[1]))
             {
+
                 responseString = "Сообщение получено сервером";
-                Console.WriteLine("{3} [{1}]{0}: {2}", contentSplit[0], contentSplit[1], contentSplit[2], DateTime.Now.ToString("HH:mm:ss"));
+                    File.AppendAllText("ServerLog.log",
+                 ("{3} [{1}]{0}: {2}", contentSplit[0], contentSplit[1], contentSplit[2], DateTime.Now.ToString("HH:mm:ss")).ToString()+ Environment.NewLine);
+
+                    Console.WriteLine("{3} [{1}]{0}: {2}", contentSplit[0], contentSplit[1], contentSplit[2], DateTime.Now.ToString("HH:mm:ss"));
             }
                 
             else
@@ -97,6 +103,9 @@ namespace ServerHttp
                 string responseString = generateKey();
 
                 ClientList.ClientListAdd(userName, responseString);
+
+                File.AppendAllText("ServerLog.log",
+                ("{1}: {0} получил ключ", userName, DateTime.Now.ToString("HH:mm:ss")).ToString()+ Environment.NewLine);
 
                 Console.WriteLine("{1}: {0} получил ключ", userName, DateTime.Now.ToString("HH:mm:ss"));
 
