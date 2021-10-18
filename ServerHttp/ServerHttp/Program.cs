@@ -14,7 +14,8 @@ namespace ServerHttp
        
          static async Task Main(string[] args)
         {
-           await  Listen();
+            Console.WriteLine("Сервер запущен...Ожидание подключений...");
+            await Listen();
         }
         static private async Task Listen()
         {
@@ -29,25 +30,27 @@ namespace ServerHttp
             listener8001.Start();
 
 
-            while (true)
-            {
-                await ListenKey8000(listener8000);
-                await ListenMessage8001(listener8001);
-            }
+
+            var LK8000 = ListenKey8000(listener8000);
+            var LM8001 = ListenMessage8001(listener8001);  
+                await Task.WhenAll(LK8000, LM8001);   
 
         }
         static private async Task ListenMessage8001(HttpListener listener8001)
-        {                   
-            
+        {
+        while (true)
+        {
             HttpListenerContext context = await listener8001.GetContextAsync();
             HttpListenerRequest request = context.Request;
             HttpListenerResponse response = context.Response;
 
 
             //считывывем поток post
+
             var originalStream = new StreamReader(context.Request.InputStream);
-            string  content = originalStream.ReadToEnd();
-        
+            string content = originalStream.ReadToEnd();
+
+           // Console.WriteLine(content);
 
             //Console.WriteLine("запрос {0}", content);
             //Console.WriteLine("запрос {0}", context.Request.HttpMethod);
@@ -62,43 +65,47 @@ namespace ServerHttp
             if (ClientList.SearchNameAndKey(contentSplit[0], contentSplit[1]))
             {
                 responseString = "Сообщение получено сервером";
-                Console.WriteLine("{0}: {1}", contentSplit[0], contentSplit[2]);
+                Console.WriteLine("{3} [{1}]{0}: {2}", contentSplit[0], contentSplit[1], contentSplit[2], DateTime.Now.ToString("HH:mm:ss"));
             }
+                
             else
             {
                 responseString = "Ошибка авторизации";
             }
-          
+
 
             byte[] buffer = System.Text.Encoding.UTF8.GetBytes(responseString);
             response.ContentLength64 = buffer.Length;
             Stream output = response.OutputStream;
             output.Write(buffer, 0, buffer.Length);
             output.Close();
+        }
 
         }
         static private async Task ListenKey8000(HttpListener listener8000)
         {
+            while (true)
+            {
+                HttpListenerContext context = await listener8000.GetContextAsync();
+                HttpListenerRequest request = context.Request;
+                HttpListenerResponse response = context.Response;
 
-            HttpListenerContext context = await listener8000.GetContextAsync();
-            HttpListenerRequest request = context.Request;
-            HttpListenerResponse response = context.Response;
+                //Console.WriteLine("запрос {0}", context.Request.RawUrl);
 
-            //Console.WriteLine("запрос {0}", context.Request.RawUrl);
+                string userName = context.Request.RawUrl.Replace("/getKey/", "");
 
-            string userName = context.Request.RawUrl.Replace("/getKey/", "");
+                string responseString = generateKey();
 
-            string responseString = generateKey();
+                ClientList.ClientListAdd(userName, responseString);
 
-            ClientList.ClientListAdd(userName, responseString);
+                Console.WriteLine("{1}: {0} получил ключ", userName, DateTime.Now.ToString("HH:mm:ss"));
 
-            Console.WriteLine("{0} подключился к серверу", userName);
-
-            byte[] buffer = System.Text.Encoding.UTF8.GetBytes(responseString);
-            response.ContentLength64 = buffer.Length;
-            Stream output = response.OutputStream;
-            output.Write(buffer, 0, buffer.Length);
-            output.Close();
+                byte[] buffer = System.Text.Encoding.UTF8.GetBytes(responseString);
+                response.ContentLength64 = buffer.Length;
+                Stream output = response.OutputStream;
+                output.Write(buffer, 0, buffer.Length);
+                output.Close();
+            }
 
         }
         private static string generateKey()
