@@ -27,7 +27,7 @@ namespace ClientHttp
 
         static async Task Main()
         {
-            for (int i = 0; i < 50; i++)
+            for (int i = 0; i < 10; i++)
             {
                 await getKey(generateKey());
                 await postMessage(userName, userKey, "TestMessage");
